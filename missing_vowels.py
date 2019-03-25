@@ -70,7 +70,7 @@ def collate(word_list, min_word_length):
 
 def main():
   if len(sys.argv) < 2:
-    print 'Usage:', sys.argv[0], '<input file>'
+    print 'Usage: python', sys.argv[0], '<input file>'
     sys.exit(1)
   with open(sys.argv[1], 'r') as f:
     # Ignore empty lines and lines beginning with '#' (comments).
@@ -80,10 +80,10 @@ def main():
     print 'QUESTIONS:'
     for i in range(len(answers)):
       # Strip out vowels, and all non-alphanumeric characters.
-      string = re.sub('[^A-Z0-9 ]+', '', re.sub('[AEIOU]', '', answers[i]))
+      string = re.sub('[^A-Z0-9 ]', '', re.sub('[AEIOU]', '', answers[i]))
       stripped_words = ''.join([insert_spaces(word, len(word)) \
                                   for word in string.split(' ')]) \
-                          .split(' ')
+                         .split(' ')
       collated_words = collate(stripped_words, MIN_WORD_LENGTH)
       # Check that we aren't missing or adding any letters.
       lhs = re.sub(' ', '', ''.join(collated_words))
