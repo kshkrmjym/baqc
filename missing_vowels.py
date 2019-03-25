@@ -1,3 +1,8 @@
+# Usage: python missing_vowels.py <input file name>
+# The input file should contain a list of answers, one per line.
+# Empty lines and comment lines (i.e. lines beginning with '#')
+# are ignored.
+
 import difflib
 import sys
 import re
@@ -70,7 +75,7 @@ def collate(word_list, min_word_length):
 
 def main():
   if len(sys.argv) < 2:
-    print 'Usage: python', sys.argv[0], '<input file>'
+    print 'Usage: python', sys.argv[0], '<input file name>'
     sys.exit(1)
   with open(sys.argv[1], 'r') as f:
     # Ignore empty lines and lines beginning with '#' (comments).
