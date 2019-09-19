@@ -67,6 +67,12 @@ def main():
           "length:", phrase_length, \
           "%d non-elements: %s" % (num_non_elements, non_elements)
     score = phrase_length + num_non_elements
-
+    for i in xrange(8):
+      for j in xrange(8):
+        if (i*8 + j) < len(phrase):
+          print "|%2s" % phrase[i*8 + j].title(),
+        else:
+          break
+      print " "
 if __name__ == '__main__':
   main()

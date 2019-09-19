@@ -116,10 +116,14 @@
 116 Lv Livermorium
 117 Ts Tennessine
 118 Og Oganesson
--1  E  electrom
--1  M  muon
-+2  A  alpha
-1   D  Deuterium
-1   T  Tritium
-999 R  Organic radical
-100 Ct Centurium [Proposed name for fermium]
+unit m metre
+unit kg kilogram
+unit s second
+unit A Ampere
+unit K Kelvin
+unit J Joule
+unit R Roentgen
+1 D Deuterium
+1 T tritium
+-1 e electron
+100 Ct Centurium
