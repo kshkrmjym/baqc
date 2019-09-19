@@ -61,11 +61,18 @@ def main():
   print "Optimal phrase(s):"
   for phrase in min_phrases:
     phrase_length = len(phrase)
-    num_non_elements = len(filter(lambda s: s not in symbols, phrase))
+    non_elements = [s for s in phrase if s not in symbols]
+    num_non_elements = len(non_elements)
     print capitalized(phrase), \
           "length:", phrase_length, \
-          "non-elements:", num_non_elements
+          "%d non-elements: %s" % (num_non_elements, non_elements)
     score = phrase_length + num_non_elements
-
+    for i in xrange(8):
+      for j in xrange(8):
+        if (i*8 + j) < len(phrase):
+          print "|%2s" % phrase[i*8 + j].title(),
+        else:
+          break
+      print " "
 if __name__ == '__main__':
   main()
